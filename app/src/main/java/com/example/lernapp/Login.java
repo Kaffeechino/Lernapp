@@ -1,7 +1,13 @@
 package com.example.lernapp;
 
+import static com.example.lernapp.R.color.black;
+import static com.example.lernapp.R.color.red;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -60,6 +66,21 @@ public class Login extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+        textInputEditTextEmail.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                System.out.println("Has Focus: " + textInputEditTextEmail.hasFocus());
+                if (textInputEditTextEmail.hasFocus() == false) {
+                    if (InputCheck.checkEmail(String.valueOf(textInputEditTextEmail.getText())) == false) {
+                        System.out.println("Email ist. " + InputCheck.checkEmail(String.valueOf(textInputEditTextEmail.getText())));
+                        textInputEditTextEmail.setTextColor(Color.RED);
+                    } else {
+                        textInputEditTextEmail.setTextColor(Color.BLACK);
+                    }
+                }
+
+            }
+        });
 
         buttonSubmit.setOnClickListener(v -> {
             // Handle button click event
@@ -68,6 +89,7 @@ public class Login extends AppCompatActivity {
 
             // Retrieve user input values
             email = String.valueOf(textInputEditTextEmail.getText());
+
             password = String.valueOf(textInputEditTextPassword.getText());
 
             RequestQueue queue = Volley.newRequestQueue(getApplicationContext());

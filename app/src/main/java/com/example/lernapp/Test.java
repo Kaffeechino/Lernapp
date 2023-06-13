@@ -74,6 +74,7 @@ public class Test extends AppCompatActivity {
 
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setSelectedItemId(R.id.test);
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -86,7 +87,7 @@ public class Test extends AppCompatActivity {
                     finish();
                     return true;
                 } else if (item.getItemId() == R.id.home) {
-                    Intent intent1 = new Intent(getApplicationContext(), com.example.lernapp.Test.class);
+                    Intent intent1 = new Intent(getApplicationContext(), com.example.lernapp.Main.class);
                     startActivity(intent1);
                     finish();
                     return true;

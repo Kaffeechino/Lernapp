@@ -46,12 +46,11 @@ public class Main extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("MyAppName", MODE_PRIVATE);
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
-
+        bottomNavigationView.setSelectedItemId(R.id.home);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 System.out.println(item.getItemId());
-
                 if (item.getItemId() == R.id.test) {
                     Intent intent = new Intent(getApplicationContext(), com.example.lernapp.Test.class);
                     startActivity(intent);
