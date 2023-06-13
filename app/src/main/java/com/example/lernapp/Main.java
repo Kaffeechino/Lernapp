@@ -51,7 +51,6 @@ public class Main extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 System.out.println(item.getItemId());
-
                 if (item.getItemId() == R.id.test) {
                     Intent intent = new Intent(getApplicationContext(), com.example.lernapp.Test.class);
                     startActivity(intent);
