@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">SyRus learnApp</string>
+    <string name="login">Login</string>
+    <string name="enter_email">Enter email</string>
+    <string name="enter_password">Enter password</string>
+    <string name="submit">submit</string>
+    <string name="error_while_logging_in">error while logging in</string>
+    <string name="registration">Registration</string>
+    <string name="enter_name">Enter name</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="email">Email</string>
+    <string name="name">Name</string>
+    <string name="logout">Logout</string>
+    <string name="fetch_user">Fetch user</string>
+    <string name="click_here_to_register">Click here to register</string>
+    <string name="test_starten">Test Starten</string>
+    <string name="home">Home</string>
+    <string name="test">Test</string>
+    <string name="go_to_crud">Go to Crud</string>
+    <string name="serverIP">192.168.178.21</string>
+    <string name="click_here_to_login">Click here to login</string>
+    <string name="ranking">Ranking</string>
+    <string name="title_activity_list_view">ListView</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
