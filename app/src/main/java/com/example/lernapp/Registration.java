@@ -54,7 +54,7 @@ public class Registration extends AppCompatActivity {
             email = String.valueOf(textInputEditTextEmail.getText());
             password = String.valueOf(textInputEditTextPassword.getText());
             RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-            String url = "http://10.1.7.16/login-registration-android/register.php";
+            String url = "http://192.168.178.97/login-registration-android/register.php";
 
             StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                     response -> {

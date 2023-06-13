@@ -26,7 +26,7 @@ import java.util.Map;
 public class Main extends AppCompatActivity {
     TextView textViewName, textViewEmail, textViewFetchResult;
     SharedPreferences sharedPreferences;
-    Button buttonLogout, buttonFetchUser, buttonHome;
+    Button buttonLogout;
     BottomNavigationView bottomNavigationView;
 
     @Override
@@ -40,7 +40,6 @@ public class Main extends AppCompatActivity {
         textViewFetchResult = findViewById(R.id.fetchResult);
 
         buttonLogout = findViewById(R.id.logout);
-        buttonFetchUser = findViewById(R.id.fetchProfile);
 
         // Get the shared preferences
         sharedPreferences = getSharedPreferences("MyAppName", MODE_PRIVATE);
@@ -81,7 +80,7 @@ public class Main extends AppCompatActivity {
         buttonLogout.setOnClickListener(v -> {
             // Create a request queue
             RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-            String url = "http://10.1.7.16/login-registration-android/logout.php";
+            String url = "http://192.168.178.97/login-registration-android/logout.php";
 
             // Create a StringRequest to send a POST request to the logout URL
             StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
@@ -115,34 +114,6 @@ public class Main extends AppCompatActivity {
             };
             queue.add(stringRequest);
         });
-
-        // Fetch user button click listener
-        buttonFetchUser.setOnClickListener(v -> {
-            // Create a request queue
-            RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-            String url = "http://192.168.178.21/login-registration-android/profile.php";
-
-            // Create a StringRequest to send a POST request to the profile URL
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-                    response -> {
-                        // Display the fetched result in a text view
-                        textViewFetchResult.setText(response);
-                        textViewFetchResult.setVisibility(View.VISIBLE);
-                    },
-                    Throwable::printStackTrace) {
-                // Define the POST parameters
-                protected Map<String, String> getParams() {
-                    Map<String, String> paramV = new HashMap<>();
-                    paramV.put("email", sharedPreferences.getString("email", ""));
-                    paramV.put("apiKey", sharedPreferences.getString("apiKey", ""));
-                    paramV.put("userId", sharedPreferences.getString("userId", ""));
-                    return paramV;
-                }
-            };
-            queue.add(stringRequest);
-        });
-
-
 
     }
 }

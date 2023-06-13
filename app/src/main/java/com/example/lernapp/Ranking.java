@@ -60,7 +60,7 @@ public class Ranking extends AppCompatActivity {
 
 
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-        String url = "http://10.1.7.16/login-registration-android/ranking.php";
+        String url = "http://192.168.178.97/login-registration-android/ranking.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 response -> {
